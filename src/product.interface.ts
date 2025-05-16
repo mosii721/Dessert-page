@@ -2,7 +2,7 @@ export interface Product {
   name: string;
   category: string;
   price: number;
-  image: string; // CHANGE: Set to string to match IndexedDB
+  image: string;
   id?: number;
 }
 

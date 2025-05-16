@@ -1,4 +1,4 @@
-import type { Product, CartItem } from './product.interface'; // Type-only import
+import type { Product, CartItem } from './product.interface'; 
 
 export class DatabaseService {
   private db: IDBDatabase | null = null;
@@ -6,11 +6,12 @@ export class DatabaseService {
   private readonly PRODUCT_STORE = 'products';
   private readonly CART_STORE = 'cart';
 
-  constructor() {}
+  constructor() {
+    this.initDatabase();
+  }
 
   public initDatabase(): Promise<void> {
     return new Promise((resolve, reject) => {
-      // CHANGE: Kept version at 1, rely on manual deletion for fresh schema
       const request = indexedDB.open(this.DB_NAME, 1);
 
       request.onerror = () => reject(request.error);
@@ -18,7 +19,6 @@ export class DatabaseService {
       request.onsuccess = () => {
         this.db = request.result;
         console.log('Database initialized');
-        // CHANGE: Log cart store indexes to verify productId
         const transaction = this.db!.transaction([this.CART_STORE], 'readonly');
         const store = transaction.objectStore(this.CART_STORE);
         console.log('Cart store indexes:', Array.from(store.indexNames));
@@ -27,7 +27,6 @@ export class DatabaseService {
 
       request.onupgradeneeded = (event) => {
         const db = (event.target as IDBOpenDBRequest).result;
-        // CHANGE: Removed conditional store deletion, assume fresh creation
         const productStore = db.createObjectStore(this.PRODUCT_STORE, {
           keyPath: 'id',
           autoIncrement: true,

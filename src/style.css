@@ -7,7 +7,7 @@ body {
 
 .container {
   display: flex;
-  gap:1rem;
+  gap:0.3rem;
   margin: 0 auto;
   background: white;
   padding: 20px;
@@ -37,7 +37,7 @@ h1, h2 {
 }
 
 .product-image {
-  max-width: 100px;
+  width: 20rem;
   height: auto;
   border-radius: 4px;
 }
@@ -62,18 +62,18 @@ button {
 button:hover, button:focus {
   background-color: hsl(14, 86%, 42%);
 }
+.cart{
+  border: 1px solid #ddd;
+  padding: 1rem;
+  width: 50rem;
+  height: auto;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  background: #fff;
+}
 
 .cart-actions button {
-  margin-right: 5px;
-}
-
-.cart-actions button:nth-child(1), .cart-actions button:nth-child(2) {
-  background-color: #007bff;
-}
-
-.cart-actions button:nth-child(1):hover, .cart-actions button:nth-child(1):focus,
-.cart-actions button:nth-child(2):hover, .cart-actions button:nth-child(2):focus {
-  background-color: #0056b3;
+  margin-right:5px;
 }
 
 .cart-actions button:nth-child(3) {
@@ -128,14 +128,4 @@ button:hover, button:focus {
   .product-card, .cart-item {
     padding: 8px;
   }
-}
-
-.attribution {
-  font-size: 11px;
-  text-align: center;
-  margin-top: 20px;
-}
-
-.attribution a {
-  color: hsl(228, 45%, 44%);
 }
