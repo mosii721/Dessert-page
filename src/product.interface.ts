@@ -1,18 +1,13 @@
 export interface Product {
-    name: string;
-    category: string;
-    price: number;
-    image: {
-      thumbnail: string;
-      mobile: string;
-      tablet: string;
-      desktop: string;
-    }; 
-    id?: number;
-  }
-  
-  export interface CartItem {
-    id?: number;
-    productId: number;
-    quantity: number;
-  }
+  name: string;
+  category: string;
+  price: number;
+  image: string; // CHANGE: Set to string to match IndexedDB
+  id?: number;
+}
+
+export interface CartItem {
+  id?: number;
+  productId: number;
+  quantity: number;
+}

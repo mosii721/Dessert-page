@@ -1,7 +1,7 @@
 import './style.css';
 import productsData from './data.json';
 import { DatabaseService } from './database.service';
-import type { Product, CartItem } from './product.interface';
+
 
 async function initializeApp() {
   const db = new DatabaseService();
@@ -150,7 +150,7 @@ async function initializeApp() {
     modalTotal.textContent = `Total: $${total.toFixed(2)}`;
 
     modal.style.display = 'block';
-    document.querySelector('#startNewOrder')!.focus();
+    (document.querySelector('#startNewOrder') as HTMLElement)?.focus();
   }
 
   window.addToCart = async (productId: number) => {
