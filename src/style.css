@@ -1,0 +1,141 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+.container {
+  display: flex;
+  gap:1rem;
+  margin: 0 auto;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+  text-align: center;
+  color: #333;
+}
+
+.product-list, .cart {
+  margin-bottom: 20px;
+}
+#productsList{
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.product-card, .cart-item {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  background: #fff;
+}
+
+.product-image {
+  max-width: 100px;
+  height: auto;
+  border-radius: 4px;
+}
+
+.product-card h3, .cart-item h3 {
+  margin: 0 0 5px;
+}
+
+.product-card p, .cart-item p {
+  margin: 5px 0;
+}
+
+button {
+  padding: 8px;
+  background-color: hsl(20, 50%, 98%);
+  color: black;
+  border: 1px solid hsl(14, 86%, 42%);
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+button:hover, button:focus {
+  background-color: hsl(14, 86%, 42%);
+}
+
+.cart-actions button {
+  margin-right: 5px;
+}
+
+.cart-actions button:nth-child(1), .cart-actions button:nth-child(2) {
+  background-color: #007bff;
+}
+
+.cart-actions button:nth-child(1):hover, .cart-actions button:nth-child(1):focus,
+.cart-actions button:nth-child(2):hover, .cart-actions button:nth-child(2):focus {
+  background-color: #0056b3;
+}
+
+.cart-actions button:nth-child(3) {
+  background-color: #dc3545;
+}
+
+.cart-actions button:nth-child(3):hover, .cart-actions button:nth-child(3):focus {
+  background-color: #c82333;
+}
+
+#confirmOrder {
+  width: 100%;
+  padding: 10px;
+}
+
+#confirmOrder:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 500px;
+  width: 90%;
+}
+
+.modal-content div {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 10px;
+  }
+  .product-card, .cart-item {
+    padding: 8px;
+  }
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
