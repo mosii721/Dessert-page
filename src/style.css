@@ -2,7 +2,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 20px;
-  background-color: #f4f4f4;
+  background-color: hsl(0, 100%, 100%);
   height: auto;
 }
 
@@ -10,7 +10,7 @@ body {
   display: flex;
   gap:0.3rem;
   margin: 0 auto;
-  background: white;
+  background: hsl(0, 100%, 100%);
   padding: 20px;
   border-radius: 8px;
   width: 80%;
@@ -18,7 +18,7 @@ body {
 
 h1, h2 {
   text-align: center;
-  color: #333;
+  color: hsl(0, 0%, 0%);
 }
 
 .product-list, .cart {
@@ -33,7 +33,7 @@ h1, h2 {
   padding: 10px;
   margin-bottom: 10px;
   border-radius: 4px;
-  background: #fff;
+  background: hsl(0, 100%, 100%);
   width: 30%;
 }
 
@@ -74,7 +74,6 @@ h1, h2 {
   align-items: center;
   border-radius: 25px;
   padding: 10px;
-  color: yellow;
 }
 .quantity-controls button{
   padding:2px;
@@ -82,7 +81,7 @@ h1, h2 {
   border-radius: 100%;
 }
 .quantity-controls span{
-  color: hsl(20, 50%, 98%);
+  color: hsl(0, 100%, 100%);
 }
 .product-button1{
   width: 60%;
@@ -95,7 +94,7 @@ h1, h2 {
 button {
   padding: 10px;
   background-color: hsl(20, 50%, 98%);
-  color: black;
+  color: hsl(0, 0%, 0%);
   border: 1px solid hsl(14, 86%, 42%);
   border-radius: 25px;
   cursor: pointer;
@@ -111,7 +110,7 @@ button:hover, button:focus {
   height: auto;
   margin-bottom: 10px;
   border-radius: 4px;
-  background: #fff;
+  background: hsl(0, 100%, 100%);
 }
 .cart-item{
   display: flex;
@@ -133,7 +132,7 @@ button:hover, button:focus {
 }
 
 #confirmOrder:disabled {
-  background-color: #ccc;
+  background-color: hsl(0, 0%, 81%);
   cursor: not-allowed;
 }
 
@@ -151,7 +150,7 @@ button:hover, button:focus {
 }
 
 .modal-content {
-  background-color: white;
+  background-color: hsl(0, 100%, 100%);
   padding: 20px;
   border-radius: 8px;
   max-width: 80%;
@@ -185,12 +184,4 @@ button:hover, button:focus {
 .modal-items1{
   display: flex;
   flex-direction: column;
-}
-@media (max-width: 600px) {
-  .container {
-    padding: 10px;
-  }
-  .product-card, .cart-item {
-    padding: 8px;
-  }
 }
