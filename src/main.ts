@@ -34,7 +34,7 @@ async function initializeApp() {
     <div id="modal" class="modal" style="display: none;">
       <div class="modal-content">
         <h2>Order Confirmed</h2>
-        <div id="modalItems"></div>
+        <div id="modalItems" class="modal-items"></div>
         <p id="modalTotal"></p>
         <button id="startNewOrder">Start New Order</button>
       </div>
@@ -57,10 +57,8 @@ async function initializeApp() {
         const quantity = cartItem ? cartItem.quantity : 0;
         return `
           <div class="product-card" id="product-${product.id}">
-            <img src="${product.image}" alt="${product.name}" class="product-image"">
-             <p> ${product.category}</p>
-            <h3>${product.name}</h3>
-            <p> $${product.price.toFixed(2)}</p>
+            <img src="${product.image}" alt="${product.name}" class="product-image">
+            <div class="product-button" >
             ${
               quantity > 0
                 ? `
@@ -70,8 +68,12 @@ async function initializeApp() {
                     <button onclick="increaseQuantity(${cartItem!.id})">+</button>
                   </div>
                 `
-                : `<button onclick="addToCart(${product.id})">Add to Cart</button>`
+                : `<button onclick="addToCart(${product.id})"  class="product-button1">Add to Cart</button>`
             }
+            </div>
+             <p> ${product.category}</p>
+            <h3>${product.name}</h3>
+            <p> <span>$${product.price.toFixed(2)}</span></p>
           </div>
         `;
       })
@@ -86,12 +88,11 @@ async function initializeApp() {
           if (!product) return '';
           return `
             <div class="cart-item" id="cart-${item.id}">
+            <div>
               <h3>${product.name}</h3>
-              <p>Price: $${product.price.toFixed(2)}</p>
-              <p>Quantity: ${item.quantity}</p>
-              <div class="cart-actions">
-                <button onclick="decreaseQuantity(${item.id})">-</button>
-                <button onclick="increaseQuantity(${item.id})">+</button>
+              <p> <span>${item.quantity}x</span>  @$${product.price.toFixed(2)}</p>
+              </div>
+              <div class="cart-action">
                 <button onclick="removeFromCart(${item.id})">x</button>
               </div>
             </div>
@@ -114,14 +115,14 @@ async function initializeApp() {
     const products = await db.getAllProducts();
     const cart = await db.getCart();
 
-    modalItems.innerHTML = cart
-      .map((item) => {
+    modalItems.innerHTML = cart.map((item) => {
         const product = products.find(p => p.id === item.productId);
         if (!product) return '';
         return `
           <div>
-            <span>${product.name} x${item.quantity}</span>
-            <span>$${(product.price * item.quantity).toFixed(2)}</span>
+            <img src="${product.image}" alt="${product.name}">
+            <p>${product.name} </br> ${item.quantity}x   $${product.price }</p>
+            <span class="item-total">$${(product.price * item.quantity).toFixed(2)}</span>
           </div>
         `;
       })
@@ -131,7 +132,8 @@ async function initializeApp() {
       return sum + (product ? product.price * item.quantity : 0);
     }, 0);
     modalTotal.textContent = `Total: $${total.toFixed(2)}`;
-    modal.style.display = 'block';
+    modal.classList.add('modal-visible');
+    modal.style.display = 'flex';
     (document.querySelector('#startNewOrder') as HTMLElement)?.focus();
   }
 

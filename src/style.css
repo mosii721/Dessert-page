@@ -3,6 +3,7 @@ body {
   margin: 0;
   padding: 20px;
   background-color: #f4f4f4;
+  height: auto;
 }
 
 .container {
@@ -12,7 +13,7 @@ body {
   background: white;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 80%;
 }
 
 h1, h2 {
@@ -28,18 +29,19 @@ h1, h2 {
   gap: 1rem;
   flex-wrap: wrap;
 }
-.product-card, .cart-item {
-  border: 1px solid #ddd;
+.product-card{
   padding: 10px;
   margin-bottom: 10px;
   border-radius: 4px;
   background: #fff;
+  width: 30%;
 }
 
 .product-image {
   width: 20rem;
   height: auto;
   border-radius: 4px;
+  z-index: 1;
 }
 
 .product-card h3, .cart-item h3 {
@@ -49,9 +51,49 @@ h1, h2 {
 .product-card p, .cart-item p {
   margin: 5px 0;
 }
+.product-card p{
+  color: hsl(14, 25%, 72%);
+}
+.product-card span{
+  color: hsl(14, 86%, 42%);
+}
+
+.product-button{
+  z-index: 2;
+  margin-top: -30px;
+  width: 90%;
+}
+.quantity-controls{
+  margin-left: 100px;
+  z-index: 2;
+  position: relative;
+  width: 40%;
+  background-color: hsl(14, 86%, 42%);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 25px;
+  padding: 10px;
+  color: yellow;
+}
+.quantity-controls button{
+  padding:2px;
+  background-color: hsl(14, 86%, 42%);
+  border-radius: 100%;
+}
+.quantity-controls span{
+  color: hsl(20, 50%, 98%);
+}
+.product-button1{
+  width: 60%;
+  padding: 15px;
+  margin-left: 70px;
+}
+
+
 
 button {
-  padding: 8px;
+  padding: 10px;
   background-color: hsl(20, 50%, 98%);
   color: black;
   border: 1px solid hsl(14, 86%, 42%);
@@ -63,25 +105,26 @@ button:hover, button:focus {
   background-color: hsl(14, 86%, 42%);
 }
 .cart{
-  border: 1px solid #ddd;
-  padding: 1rem;
-  width: 50rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 75%;
   height: auto;
   margin-bottom: 10px;
   border-radius: 4px;
   background: #fff;
 }
-
-.cart-actions button {
-  margin-right:5px;
+.cart-item{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid hsl(14, 25%, 72%);
 }
-
-.cart-actions button:nth-child(3) {
-  background-color: #dc3545;
+.cart-item span{
+  color: hsl(14, 86%, 42%);
 }
-
-.cart-actions button:nth-child(3):hover, .cart-actions button:nth-child(3):focus {
-  background-color: #c82333;
+.cart-action button {
+  padding:5px;
+  border-radius: 100%;
 }
 
 #confirmOrder {
@@ -108,19 +151,41 @@ button:hover, button:focus {
 }
 
 .modal-content {
-  background: white;
+  background-color: white;
   padding: 20px;
   border-radius: 8px;
-  max-width: 500px;
-  width: 90%;
+  max-width: 80%;
+  width: 500px;
+  height: auto;
 }
 
 .modal-content div {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
   margin: 10px 0;
+  width: 80%;
 }
-
+.modal-items{
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  background: hsl(14, 25%, 72%);
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+}
+.modal-items img{
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+.modal-items1{
+  display: flex;
+  flex-direction: column;
+}
 @media (max-width: 600px) {
   .container {
     padding: 10px;

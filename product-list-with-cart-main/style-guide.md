@@ -12,7 +12,7 @@ The designs were created to the following widths:
 ## Colors
 
 - Red: hsl(14, 86%, 42%)
-- Green: hsl(159, 69%, 38%)
+- Green: hsl(160, 47.40%, 3.70%)
 
 - Rose 50: hsl(20, 50%, 98%)
 - Rose 100: hsl(13, 31%, 94%)
