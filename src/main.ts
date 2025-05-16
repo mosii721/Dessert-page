@@ -57,7 +57,7 @@ async function initializeApp() {
         const quantity = cartItem ? cartItem.quantity : 0;
         return `
           <div class="product-card" id="product-${product.id}">
-            <img src="${product.image}" alt="${product.name}" class="product-image" onerror="console.error('Failed to load image: ${product.image}')">
+            <img src="${product.image}" alt="${product.name}" class="product-image"">
              <p> ${product.category}</p>
             <h3>${product.name}</h3>
             <p> $${product.price.toFixed(2)}</p>
@@ -77,7 +77,7 @@ async function initializeApp() {
       })
       .join('');
     if (cart.length === 0) {
-      cartItemsDiv.innerHTML = '<img src="./product-list-with-cart-main/assets/images/illustration-empty-cart.svg" alt="cart is not available" class="product-image"/><h2>Your added items will appear here</h2>';
+      cartItemsDiv.innerHTML = '<img src="/assets/illustration-empty-cart.svg" alt="cart is not available" class="product-image"/><h2>Your added items will appear here</h2>';
       confirmButton.disabled = true;
     } else {
       cartItemsDiv.innerHTML = await Promise.all(
