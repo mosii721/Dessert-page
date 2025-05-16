@@ -11,12 +11,13 @@ async function initializeApp() {
   const existingProducts = await db.getAllProducts();
   if (existingProducts.length === 0) {
     for (const product of productsData) {
-      // CHANGE: Ensure image is a string before adding
-      if (typeof product.image !== 'string') {
-        console.error(`Invalid image for ${product.name}:`, product.image);
-        continue;
-      }
-      await db.addProduct(product);
+      // CHANGE: Use image.desktop for IndexedDB
+      await db.addProduct({
+        name: product.name,
+        category: product.category,
+        price: product.price,
+        image: product.image.desktop
+      });
     }
   }
 
@@ -66,7 +67,7 @@ async function initializeApp() {
         const quantity = cartItem ? cartItem.quantity : 0;
         return `
           <div class="product-card" id="product-${product.id}">
-            <!-- CHANGE: Ensure image is string -->
+            <!-- CHANGE: Use product.image directly (stored as desktop path) -->
             <img src="${product.image}" alt="${product.name}" class="product-image" onerror="console.error('Failed to load image: ${product.image}')">
             <h3>${product.name}</h3>
             <p>Category: ${product.category}</p>
