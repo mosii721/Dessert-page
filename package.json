@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "vite build",
+    "postbuild": "node -e \"require('fs').cpSync('public/assets', 'dist/assets', {recursive: true, force: true})\"",
     "preview": "vite preview"
   },
   "devDependencies": {
