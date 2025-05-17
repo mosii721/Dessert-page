@@ -9,11 +9,12 @@ async function initializeApp() {
   const existingProducts = await db.getAllProducts();
   if (existingProducts.length === 0) {
     for (const product of productsData) {
+      const imagePath = product.image.desktop;
       await db.addProduct({
         name: product.name,
         category: product.category,
         price: product.price,
-        image: product.image.desktop
+        image: imagePath
       });
     }
   }
