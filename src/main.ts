@@ -91,7 +91,7 @@ async function initializeApp() {
             <div class="cart-item" id="cart-${item.id}">
             <div>
               <h3>${product.name}</h3>
-              <p> <span>${item.quantity}x</span>  @$${product.price.toFixed(2)}</p>
+              <p> <span>${item.quantity}x</span>  @$${product.price.toFixed(2)}  $${(product.price * item.quantity).toFixed(2)}</p>
               </div>
               <div class="cart-action">
                 <button onclick="removeFromCart(${item.id})">x</button>
@@ -123,7 +123,7 @@ async function initializeApp() {
           <div>
             <img src="${product.image}" alt="${product.name}">
             <p>${product.name} </br> ${item.quantity}x   $${product.price }</p>
-            <span class="item-total">$${(product.price * item.quantity).toFixed(2)}</span>
+            <span>$${(product.price * item.quantity).toFixed(2)}</span>
           </div>
         `;
       })
