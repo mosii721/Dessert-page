@@ -22,7 +22,7 @@ async function initializeApp() {
   document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <h1>Desserts</h1>
     <div class="container">
-      <div class="product-list">
+      <div>
         <div id="productsList"></div>
       </div>
       <div class="cart">
