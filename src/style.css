@@ -46,6 +46,7 @@ h1, h2 {
 
 .product-card h3, .cart-item h3 {
   margin: 0 0 5px;
+  font-size: 15px;
 }
 
 .product-card p, .cart-item p {
@@ -88,8 +89,6 @@ h1, h2 {
   padding: 15px;
   margin-left: 70px;
 }
-
-
 
 button {
   padding: 10px;
@@ -184,4 +183,133 @@ button:hover, button:focus {
 .modal-items1{
   display: flex;
   flex-direction: column;
+}
+@media (max-width: 600px) {
+  body {
+    padding: 5px;
+  }
+
+  .container {
+    padding: 5px;
+    flex-direction: column;
+  }
+  #productsList{
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  h1, h2 {
+    font-size: 1.2rem;
+  }
+
+  .product-card, .cart-item {
+    padding: 5px;
+  }
+
+  .product-image {
+    max-width: 15rem;
+  }
+
+  .quantity-controls {
+    width: 60%;
+    padding: 6px;
+  }
+
+  .product-button1 {
+    width: 150%;
+    padding: 8px;
+    margin-left: 50px;
+  }
+  .product-button{
+    z-index: 2;
+    margin-top: -20px;
+    width: 90%;
+  }
+
+  .cart {
+    padding: 5px;
+    width: 90%;
+  }
+
+  .modal-content {
+    padding: 8px;
+    max-width: 95%;
+  }
+
+  .modal-items {
+    padding: 5px;
+  }
+
+  .modal-item {
+    padding: 5px;
+    gap: 5px;
+  }
+
+  .modal-item img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .footer {
+    padding: 8px;
+    margin-top: 10px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+  body {
+    padding: 15px;
+  }
+
+  .container {
+    flex-direction: row;
+    padding: 15px;
+    width: 90%;
+  }
+
+  h1, h2 {
+    font-size: 1.8rem;
+  }
+
+  .product-card {
+    width: 40%;
+    max-width: 350px;
+    padding: 10px;
+  }
+
+  .product-image {
+    max-width: 18rem;
+  }
+
+  .quantity-controls {
+    width: 45%;
+    padding: 8px;
+  }
+
+  .product-button1 {
+    width: 65%;
+    padding: 12px;
+  }
+
+  .cart {
+    width: 40%;
+    padding: 15px;
+  }
+
+  .modal-content {
+    max-width: 80%;
+    padding: 15px;
+  }
+
+  .modal-item img {
+    width: 45px;
+    height: 45px;
+  }
+
+  .footer {
+    padding: 15px;
+    margin-top: 30px;
+    font-size: 0.9rem;
+  }
 }
